@@ -123,12 +123,10 @@ export default function Room(props: IRoom) {
 
 
   const changeOpen = (val: boolean) => {
-    console.log(val)
     setDialogOpen(false)
   }
 
   const changeMessage = (newBody: string) => {
-    console.log(newBody)
     let msgCopy = messageHistory.slice()
     msgCopy[idx].message_body = newBody
     setMessageHistory(msgCopy)

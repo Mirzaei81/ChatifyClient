@@ -32,7 +32,7 @@ export default function JoinRoom({ shouldRefetch, sidebarShown }: IRoomProp) {
 
   const queryClient = useQueryClient()
   const { mutate, isLoading: JoingTheRoom } = useSupabaseMutation({
-    onSuccess: () => { queryClient.invalidateQueries("room"); shouldRefetch((prev) => { console.log(prev); return true }) },
+    onSuccess: () => { queryClient.invalidateQueries("room"); shouldRefetch((prev) => { return true }) },
   });
 
   const handleSubmit = (data: any) => {
@@ -55,7 +55,6 @@ export default function JoinRoom({ shouldRefetch, sidebarShown }: IRoomProp) {
 
   const handlerEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key == 'Enter') {
-      console.log(e.key)
       setShouldSearch(true)
     }
   }

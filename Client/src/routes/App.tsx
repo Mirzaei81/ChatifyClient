@@ -38,7 +38,7 @@ function App() {
       })
 
       return () => subscription.unsubscribe()
-    } catch (e) { console.log(e) }
+    } catch (e) { }
   }, [])
   if (Load) {
     return (<Loading />)

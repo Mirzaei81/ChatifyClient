@@ -17,16 +17,16 @@ export default function LeaveRoom({ name }: { name: string }) {
   const user = useContext(UserCTX)
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
+
   const handleClick = () => {
     setLoading(true)
-    console.log(name)
     supabaseClient.from("room").select("id").eq("name", name).single().then((id) => {
-      console.log(id)
-      supabaseClient.from("room_user").delete().eq("user_id", user?.id).eq("room_id", id.data.id).then((e) => {
-        console.log(e), setLoading(false), console.log(loading)
+      supabaseClient.from("room_user").delete().eq("user_id", user?.id!).eq("room_id", id!.data!.id).then(() => {
+        setOpen(false)
       })
     })
   }
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>

@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/Dialog"
 
 import { Spinner } from "./spinner";
+import { DialogClose } from "@radix-ui/react-dialog";
 
 export default function DeleteMessage({ body, open, setOpen, setChange }: {
   body: string, author: string,

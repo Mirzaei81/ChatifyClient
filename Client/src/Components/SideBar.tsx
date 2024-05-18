@@ -1,11 +1,11 @@
 import JoinRoom from '@/components/ui/joinRoom';
 import MakeRoom from '@/components/ui/makeRoom';
 import { Skeleton } from '@/components/ui/skeleton';
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import { useEffect, useRef } from 'react';
 import MenuItem from "./MenuItem";
 
-const variants = {
+const variants: Variants = {
   open: {
     overflowY: "auto",
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
