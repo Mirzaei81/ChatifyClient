@@ -20,6 +20,7 @@ import {
   ContextMenuShortcut,
   ContextMenuTrigger,
 } from "@/components/ui/ContextMenu"
+
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { supabaseClient } from "@/main";
 import EditMessage from "@/components/ui/EditMessage";
@@ -27,11 +28,13 @@ import EditMessage from "@/components/ui/EditMessage";
 export interface IRoom {
   SideBarShown: boolean
 }
+
 interface SelectedMessage {
   body: string, author: string,
   open: boolean, setOpen: (val: boolean) => void,
   setChange: (val: string, idx: number) => void, idx: number
 }
+
 //Public API that will echo messages sent to it back to the client
 let wsURL = "ws://127.0.0.1:8000/ws/chat/"
 
