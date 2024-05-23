@@ -36,7 +36,7 @@ interface SelectedMessage {
 }
 
 //Public API that will echo messages sent to it back to the client
-let wsURL = "ws://127.0.0.1:8000/ws/chat/"
+let wsURL = import.meta.env.VITE_WEBSOCKET_URL
 
 export default function Room(props: IRoom) {
   const [val, setVal] = useState("")

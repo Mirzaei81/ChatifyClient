@@ -90,7 +90,7 @@ export default function Login() {
       ref={bgref}
       style={{ backgroundImage: `url(${url})`, backgroundSize: "cover" }}
       className="flex text-nastaliq w-screen h-screen items-center justify-center align-center" dir="rtl">
-      <div className="relative  font-BZiba rounded-xl p-4  w-1/5   bg-card">
+      <div className="relative  font-BZiba rounded-xl p-4  bg-card">
         <form className="" onSubmit={handleSubmition} ref={formRef}>
           <div className="flex h-full flex-col  text-2xl items-center">
             ورود
